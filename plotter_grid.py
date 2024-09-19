@@ -7,6 +7,13 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+"""
+Usage: python plotter_grid.py [dir]
+- plots every *.tsv file under the specified directory.
+- dir defaults to "./dat".
+"""
+
+
 EMOTIONS = ["anger_cl", "excite", "happy", "relax", "sad"]
 def plot(dat_dir: Path = Path('./dat')):
     dat_files = list(filter(lambda f: f.is_file(),
@@ -61,7 +68,11 @@ def main():
     try:
         d_name = Path(sys.argv[1])
     except IndexError as e:
-        d_name = Path("./dat")
+        print("Usage: python plotter_grid.py [dir]\n"
+              "- plots every *.tsv file under the specified directory.\n"
+              "- dir defaults to './dat'. "
+              )
+        return()
     plot(d_name)
 
 if __name__ == "__main__":
