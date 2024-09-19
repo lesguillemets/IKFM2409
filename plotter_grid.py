@@ -38,7 +38,7 @@ def plot(dat_dir: Path = Path('./dat')):
     plot_everything(dat_all, mode="ALL")
 
 
-def plot_everything(df: pd.DataFrame, mode="ALL"):
+def plot_everything(df: pd.DataFrame, mode="ALL", show=True):
     # colors = plt.cm.tab10(range(len(va.columns)))
     fig, axes = plt.subplots(ncols=3, nrows=2, figsize=(24,24))
     if mode != "ALL": # "SELF" or "OTHER"
@@ -61,7 +61,8 @@ def plot_everything(df: pd.DataFrame, mode="ALL"):
         # ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=1, fontsize=18)
     axes[-1,-1].axis('off')
     fig.suptitle(f"mode: {mode}")
-    plt.show()
+    if show:
+        plt.show()
     fig.savefig(f'plot_{format_datetime(datetime.now())}_{mode}.png',  bbox_inches='tight')
 
 
