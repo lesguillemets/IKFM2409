@@ -60,6 +60,7 @@ def plot_everything(df: pd.DataFrame, mode="ALL"):
         ax.axvline(color='grey', lw=0.2)
         # ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=1, fontsize=18)
     axes[-1,-1].axis('off')
+    fig.suptitle(f"mode: {mode}")
     plt.show()
     fig.savefig(f'plot_{format_datetime(datetime.now())}_{mode}.png',  bbox_inches='tight')
 
