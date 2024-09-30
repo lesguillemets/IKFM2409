@@ -15,7 +15,7 @@ Usage: python plotter_grid.py [dir]
 
 # condition1: 自分の顔表示（0 = 映像なし・1 = 自分顔(自分の顔に自分の顔をスワップする)・2 = 他人顔）   condition2: 参考顔表示（0 = 自分顔・1 = 他人顔(他人顔でも他人の顔をそのままスワップする)
 
-EMOTIONS = ["anger_cl", "excite", "happy", "relax", "sad"]
+EMOTIONS = ["happy", "anger_cl", "sad", "excite", "relax"]
 MODES = {"ALL", "SELF", "OTHER"}
 
 def plot(dat_dir: Path = Path('./dat')):
